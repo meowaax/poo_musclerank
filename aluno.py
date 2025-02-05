@@ -1,17 +1,21 @@
 from usuario import Usuario
-from treino import Treino
-from exercicio import Exercicio
+from treino_exercicio import Treino, Exercicio
 
 class Aluno(Usuario):
     def __init__(self, nome, cpf, data_nascimento, matricula, instrutor):
         super().__init__(nome, cpf, data_nascimento)
         self.matricula = matricula
         self.instrutor = instrutor
-        self.treino_do_dia = Treino()  
-
+    
+    def criar_treino(self, nome, descricao, duracao):
+        self.treino_do_dia = Treino(nome, descricao, duracao, self.instrutor)
+        
     def adicionar_exercicio(self, nome, descricao, pontos):
-        exercicio = Exercicio(nome, descricao, pontos)
-        self.treino_do_dia.adicionar_exercicio(exercicio)
+        if self.treino_do_dia:
+            exercicio = Exercicio(nome, descricao, pontos)
+            self.treino_do_dia.adicionar_exercicio(exercicio)
+        else:
+            print('Você precisa criar um treino primeiro.')
 
     def concluir_exercicio(self, exercicio):
         if exercicio in self.treino_do_dia.exercicios:
