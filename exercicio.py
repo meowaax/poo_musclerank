@@ -5,6 +5,12 @@ class Exercicio:
         self.nome = nome
         self.descricao = descricao
         self.pontos = pontos
-
+        
     def __str__(self):
-        return f"Exercício: {self.nome} - {self.descricao} ({self.pontos} pontos)"
+        return (f"\nNome: {self.nome}"
+            f"\nDescrição: {self.descricao}"
+            f"\nPontos: {self.pontos}")
+
+# Exemplo de uso:
+exercicio = Exercicio("Cadeira Flexora", "Posterior de Perna", 10)
+print(exercicio)
