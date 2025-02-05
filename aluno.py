@@ -3,8 +3,8 @@ from instrutor import Instrutor
 from treino_exercicio import Treino, Exercicio
 
 class Aluno(Usuario):
-    def __init__(self, nome, cpf, data_nascimento, matricula, instrutor):
-        super().__init__(nome, cpf, data_nascimento)
+    def __init__(self, nome, cpf, data_nascimento, matricula, instrutor, academia):
+        super().__init__(nome, cpf, data_nascimento,academia)
         if not isinstance(instrutor, Instrutor):
             raise ValueError('O instrutor deve estar registrado no sistema.')
         self.instrutor = instrutor
