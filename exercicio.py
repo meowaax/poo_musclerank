@@ -12,5 +12,7 @@ class Exercicio:
             f"\nPontos: {self.pontos}")
 
 # Exemplo de uso:
-exercicio = Exercicio("Cadeira Flexora", "Posterior de Perna", 10)
-print(exercicio)
+exercicio1 = Exercicio("Cadeira Flexora", "Posterior de Perna", 10)
+exercicio2 = Exercicio("Cadeira Extensora", "Quadríceps", 10)
+print(exercicio1)
+print(exercicio2)
