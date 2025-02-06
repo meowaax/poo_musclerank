@@ -14,10 +14,7 @@ class Exercicio:
 
 # Definindo a classe Treino
 class Treino:
-    def __init__(self, nome, descricao, duracao, instrutor):
-        self.nome = nome
-        self.descricao = descricao
-        self.duracao = duracao
+    def __init__(self, instrutor):
         self.instrutor = instrutor
         self.exercicios = []
         self.data_criacao = datetime.now()

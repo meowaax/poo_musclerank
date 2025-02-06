@@ -14,5 +14,5 @@ class Instrutor(Usuario):
         return [str(aluno) for aluno in self.alunos]
     
     def __str__(self):
-        return f"Instrutor: {self.nome} (Registro: {self.registro})"
+        return f"Instrutor: {self.nome} - Pontuação: {self.pontuacao}"
 

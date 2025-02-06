@@ -10,9 +10,7 @@ class Aluno(Usuario):
         self.instrutor = instrutor
         self.instrutor.adicionar_aluno(self)
         self.matricula = matricula
-    
-    def criar_treino(self, nome, descricao, duracao):
-        self.treino_do_dia = Treino(nome, descricao, duracao, self.instrutor)
+        self.treino_do_dia = Treino(instrutor)
         
     def adicionar_exercicio(self, nome, descricao, pontos):
         if self.treino_do_dia:

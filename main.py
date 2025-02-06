@@ -2,6 +2,8 @@ from academia import Academia
 from instrutor import Instrutor
 from aluno import Aluno
 from ranking import Ranking
+from academia import Academia
+from interface import Interface   
 
 if __name__ == "__main__":
     # Criação da Academia
