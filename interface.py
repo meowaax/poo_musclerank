@@ -1,3 +1,5 @@
+from aluno import Aluno
+from instrutor import Instrutor
 class Interface:
     def __init__(self, academia, ranking):
         self.academia = academia
@@ -29,7 +31,6 @@ class Interface:
                 aluno = Aluno(nome, cpf, data_nascimento, matricula, instrutor, self.academia)
                 self.academia.inserir_aluno(aluno)
                 self.ranking.adicionar_participante(aluno)
-                print(f"Aluno {nome} adicionado com sucesso!")
             else:
                 print("Instrutor não encontrado!")
 
@@ -42,7 +43,6 @@ class Interface:
             instrutor = Instrutor(nome, cpf, data_nascimento, matricula, self.academia)
             self.academia.inserir_instrutor(instrutor)
             self.ranking.adicionar_participante(instrutor)
-            print(f"Instrutor {nome} adicionado com sucesso!")
 
         elif opcao == 3:
             aluno_nome = input("Digite o nome do aluno: ")
