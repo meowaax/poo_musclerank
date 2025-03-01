@@ -10,11 +10,11 @@ from interface import Interface
 academia_top = Academia("Academia Top", "12.345.678/0001-99", "Rua das Flores, 123")
 
 # Criação do Instrutor vinculado à Academia
-instrutor = Instrutor("Carlos Silva", "123.456.789-00", "1985-06-15", "INST001", academia_top)
+instrutor = Instrutor("Carlos Silva", "12345678900", "1985-06-15", "INST001", academia_top)
 
 # Criação dos Alunos vinculados ao Instrutor e à Academia
-aluno1 = Aluno("Ana Souza", "987.654.321-00", "2000-04-22", "ALU001", instrutor, academia_top)
-aluno2 = Aluno("João Lima", "567.890.123-45", "1998-03-12", "ALU002", instrutor, academia_top)
+aluno1 = Aluno("Ana Souza", "98765432100", "2000-04-22", "ALU001", instrutor, academia_top)
+aluno2 = Aluno("João Lima", "56789012345", "1998-03-12", "ALU002", instrutor, academia_top)
 
 # Inserindo Instrutor e Alunos na Academia
 academia_top.inserir_instrutor(instrutor)

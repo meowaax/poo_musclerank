@@ -38,7 +38,7 @@ class Interface:
             nome = input("Digite o nome do instrutor: ")
             cpf = input("Digite o CPF do instrutor: ")
             data_nascimento = input("Digite a data de nascimento do instrutor (YYYY-MM-DD): ")
-            matricula = input("Digite a matrícula do instrutor: ")
+            matricula = input("Digite o registro do instrutor: ")
 
             instrutor = Instrutor(nome, cpf, data_nascimento, matricula, self.academia)
             self.academia.inserir_instrutor(instrutor)
