@@ -15,7 +15,7 @@ class Usuario:
     # novo método estático
     @staticmethod
     def validar_cpf(cpf):
-        """Verifica se o CPF possui 11 dígitos numéricos"""
+        #Verifica se o CPF possui 11 dígitos
         return isinstance(cpf, str) and cpf.isdigit() and len(cpf) == 11
     
     @property
