@@ -50,12 +50,18 @@ class Interface:
             aluno = next((a for a in self.academia.alunos if a.nome == aluno_nome), None)
 
             if aluno:
-                nome_exercicio = input("Digite o nome do exercício: ")
-                descricao = input("Digite a descrição do exercício: ")
-                pontos = int(input("Digite os pontos do exercício: "))
-                aluno.adicionar_exercicio(nome_exercicio, descricao, pontos)
+                if aluno.treino_do_dia is None:
+                    aluno.criar_treino()
+                if len(aluno.treino_do_dia) >= 10: 
+                    print("O treino já atingiu o limite de 10 exercícios!")
+                else:
+                    nome_exercicio = input("Digite o nome do exercício: ")
+                    descricao = input("Digite a descrição do exercício: ")
+                    pontos = int(input("Digite os pontos do exercício: "))
+                    aluno.adicionar_exercicio(nome_exercicio, descricao, pontos)
             else:
                 print("Aluno não encontrado!")
+
 
         elif opcao == 4:
             aluno_nome = input("Digite o nome do aluno: ")

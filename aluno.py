@@ -32,6 +32,9 @@ class Aluno(Usuario):
     def treino_do_dia(self):
         return self._treino_do_dia
     
+    def criar_treino(self):
+            self._treino_do_dia = Treino(self.instrutor)
+    
     def adicionar_exercicio(self, nome, descricao, pontos):
         if self._treino_do_dia is None:
             print("Nenhum treino encontrado. Criando treino...")
