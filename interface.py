@@ -80,7 +80,6 @@ class Interface:
                         if 0 <= escolha < len(aluno.treino_do_dia.exercicios):
                             exercicio_concluido = aluno.treino_do_dia.exercicios[escolha]
                             aluno.concluir_exercicio(exercicio_concluido)
-                            print("Exercício concluído com sucesso!")
                         else:
                             print("Escolha inválida!")
                     except ValueError:
