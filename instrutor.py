@@ -1,6 +1,12 @@
 from usuario import Usuario
+from abc import ABC, abstractmethod
 
-class Instrutor(Usuario):
+class Ensinavel(ABC):
+    @abstractmethod
+    def listar_alunos(self):
+        pass
+
+class Instrutor(Usuario, Ensinavel):
     def __init__(self, nome, cpf, data_nascimento, registro, academia):
         super().__init__(nome, cpf, data_nascimento, academia)
         self._registro = registro

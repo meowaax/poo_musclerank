@@ -1,5 +1,5 @@
 from aluno import Aluno
-from instrutor import Instrutor
+from instrutor import Instrutor, Ensinavel
 class Interface:
     def __init__(self, academia, ranking):
         self.academia = academia
@@ -117,7 +117,8 @@ class Interface:
         elif opcao == 10:
             print("\n=== Instrutores da Academia ===")
             for instrutor in self.academia.instrutores:
-                print(instrutor)
+                if isinstance(instrutor, Ensinavel):  # Verifica se pode ensinar
+                    print(instrutor)
 
         elif opcao == 11:
             print("Saindo do sistema...")

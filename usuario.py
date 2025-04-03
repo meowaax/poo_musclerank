@@ -1,4 +1,5 @@
-class Usuario:
+from abc import ABC, abstractmethod
+class Usuario(ABC):
     def __init__(self, nome, cpf, data_nascimento, academia):
         if not self.validar_cpf(cpf):
             raise ValueError("CPF inválido!")
@@ -37,6 +38,8 @@ class Usuario:
     def adicionar_pontos(self, pontos):
         self._pontuacao += pontos
     
+    @abstractmethod
     def __str__(self):
-        return f"{self._nome} - Pontuação: {self._pontuacao}"
+        #esse método vai ser obrigatório para Instrutor e Aluno
+        pass
     
