@@ -13,7 +13,7 @@ academia_top = Academia("Academia Top", "12.345.678/0001-99", "Rua das Flores, 1
 instrutor = Instrutor("Carlos Silva", "12345678900", "1985-06-15", "INST001", academia_top)
 
 # Criação dos Alunos vinculados ao Instrutor e à Academia
-aluno1 = Aluno("Ana Souza", "98765432100", "2000-04-22", "ALU001", instrutor, academia_top)
+aluno1 = Aluno("Alex", "98765432100", "2000-04-22", "ALU001", instrutor, academia_top)
 aluno2 = Aluno("João Lima", "56789012345", "1998-03-12", "ALU002", instrutor, academia_top)
 
 # Inserindo Instrutor e Alunos na Academia
@@ -29,9 +29,5 @@ ranking.adicionar_participante(aluno2)
 
 # Loop interativo
 menu = Interface(academia_top, ranking)
-executando = True
 
-while executando:
-    menu.exibir_menu()
-    opcao = int(input("Escolha uma opção: "))
-    executando = menu.executar_opcao(opcao)
+menu.executar()
