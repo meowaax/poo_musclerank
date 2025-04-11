@@ -1,7 +1,44 @@
 from datetime import datetime
+from abc import ABC, abstractmethod
 
-# Definindo a classe Exercicio
-class Exercicio:
+# Interface para exercícios
+class IExercicio(ABC):
+    @property
+    @abstractmethod
+    def nome(self):
+        pass
+
+    @nome.setter
+    @abstractmethod
+    def nome(self, nome):
+        pass
+
+    @property
+    @abstractmethod
+    def descricao(self):
+        pass
+
+    @descricao.setter
+    @abstractmethod
+    def descricao(self, descricao):
+        pass
+
+    @property
+    @abstractmethod
+    def pontos(self):
+        pass
+
+    @pontos.setter
+    @abstractmethod
+    def pontos(self, pontos):
+        pass
+
+    @abstractmethod
+    def __str__(self):
+        pass
+
+# Classe que implementa a interface
+class Exercicio(IExercicio):
     def __init__(self, nome, descricao, pontos):
         self._nome = nome
         self._descricao = descricao
@@ -39,7 +76,7 @@ class Exercicio:
                 f"\nDescrição: {self._descricao}"
                 f"\nPontos: {self._pontos}")
 
-# Definindo a classe Treino
+# Classe Treino permanece igual
 class Treino:
     def __init__(self, instrutor):
         self._instrutor = instrutor
@@ -59,10 +96,10 @@ class Treino:
         return self._exercicios
 
     def adicionar_exercicio(self, exercicio):
-        if isinstance(exercicio, Exercicio):
+        if isinstance(exercicio, IExercicio):  # Verifica pela interface
             self._exercicios.append(exercicio)
         else:
-            raise ValueError("O objeto deve ser uma instância da classe Exercicio.")
+            raise ValueError("O objeto deve implementar a interface IExercicio.")
 
     def listar_exercicios(self):
         if not self._exercicios:
